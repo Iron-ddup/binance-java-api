@@ -85,7 +85,9 @@ public class BinanceApiServiceGenerator {
      */
     public static <T> T executeSync(Call<T> call) {
         try {
+//            System.out.println("请求参数==="+call.request().toString());
             Response<T> response = call.execute();
+            System.out.println("签名参数===  "+response.toString());
             if (response.isSuccessful()) {
                 return response.body();
             } else {
